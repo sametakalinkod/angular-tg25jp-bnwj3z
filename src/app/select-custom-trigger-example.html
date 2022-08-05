@@ -1,0 +1,25 @@
+
+<mat-form-field appearance="outline">
+  <mat-select [formControl]="value">
+    <mat-select-trigger>
+      {{value.value}}
+       <span class="deleteYear" (click)="delete($event,value.value)">
+          <mat-icon>clear</mat-icon>
+        </span>
+    </mat-select-trigger>
+    <mat-option *ngFor="let year of data" [value]="year">
+
+      <div style="display:flex; justify-content: space-between">
+        <span>{{year}}</span>
+        <span></span>
+        <span class="deleteYear" (click)="delete($event,year)">
+          <mat-icon>clear</mat-icon>
+        </span>
+      </div>
+
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+<!-- Copyright 2019 Google LLC. All Rights Reserved.
+    Use of this source code is governed by an MIT-style license that
+    can be found in the LICENSE file at http://angular.io/license -->
